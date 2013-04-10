@@ -6,7 +6,7 @@ import acm.graphics.GPolygon;
 
 public class Dude extends GPolygon {
 
-	private double direction;
+	protected double direction;
 	private double speed;
 
 	public Dude() {

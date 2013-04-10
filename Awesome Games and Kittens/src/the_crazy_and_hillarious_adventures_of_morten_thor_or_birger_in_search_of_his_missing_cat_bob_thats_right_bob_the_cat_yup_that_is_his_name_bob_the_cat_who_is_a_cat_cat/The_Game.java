@@ -2,6 +2,8 @@ package the_crazy_and_hillarious_adventures_of_morten_thor_or_birger_in_search_o
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 
 import acm.program.GraphicsProgram;
 
@@ -42,5 +44,8 @@ public class The_Game extends GraphicsProgram {
 			character.move(Direction.EAST);
 			break;
 		}
+	}
+	public void mouseMoved(MouseEvent e){
+//		character.direction = ;                 // legg til retning frå character til mus..
 	}
 }
