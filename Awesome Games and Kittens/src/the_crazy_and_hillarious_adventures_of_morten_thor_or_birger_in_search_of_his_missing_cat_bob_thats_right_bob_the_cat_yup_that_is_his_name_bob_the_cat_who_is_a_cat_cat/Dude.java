@@ -6,8 +6,6 @@ import acm.graphics.GPolygon;
 
 public class Dude extends GPolygon {
 
-	// Testing, testing, can you hear me?
-// Lolol,lolololol
 	private double direction;
 	private double speed;
 
