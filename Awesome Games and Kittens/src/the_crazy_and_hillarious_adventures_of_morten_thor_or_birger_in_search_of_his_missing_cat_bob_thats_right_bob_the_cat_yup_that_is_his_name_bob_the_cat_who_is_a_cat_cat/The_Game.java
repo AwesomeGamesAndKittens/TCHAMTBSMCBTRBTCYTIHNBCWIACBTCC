@@ -3,21 +3,22 @@ package the_crazy_and_hillarious_adventures_of_morten_thor_or_birger_in_search_o
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
 
 import acm.program.GraphicsProgram;
 
 //	The crazy and hilarious adventures of Morten, Thor or Birger in search of his missing cat, Bob, that's right, Bob the cat. Yup, that is his name; Bob the cat, who is a cat. Cat.
 
-public class The_Game extends GraphicsProgram {
+public class The_Game extends GraphicsProgram{
 
 	Dude character;
+	MouseEvent mouse;
 
 	@Override
 	public void init() {
 		setBackground(Color.getHSBColor(0.312f, 0.769f, 0.458f));
 		setSize(800, 600);
 		addKeyListeners();
+		addMouseListeners();
 	}
 
 	@Override
@@ -31,21 +32,28 @@ public class The_Game extends GraphicsProgram {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		switch (e.getKeyCode()) {
-		case KeyEvent.VK_UP:
+		case KeyEvent.VK_W:
 			character.move(Direction.NORTH);
 			break;
-		case KeyEvent.VK_DOWN:
+		case KeyEvent.VK_S:
 			character.move(Direction.SOUTH);
 			break;
-		case KeyEvent.VK_LEFT:
+		case KeyEvent.VK_A:
 			character.move(Direction.WEST);
 			break;
-		case KeyEvent.VK_RIGHT:
+		case KeyEvent.VK_D:
 			character.move(Direction.EAST);
 			break;
 		}
+		if (mouse != null){
+			character.mouseRotation(mouse);
+		}
 	}
+	
 	public void mouseMoved(MouseEvent e){
-//		character.direction = ;                 // legg til retning frå character til mus..
+		if (e != null){
+			mouse = e;
+			character.mouseRotation(mouse);
+		}
 	}
 }
