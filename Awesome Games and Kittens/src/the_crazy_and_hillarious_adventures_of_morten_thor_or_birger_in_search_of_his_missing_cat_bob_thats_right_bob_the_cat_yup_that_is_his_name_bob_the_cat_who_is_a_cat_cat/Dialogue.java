@@ -14,10 +14,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Dialogue extends GraphicsProgram {
 
-	ArrayList<ArrayList<String>> strenger = new ArrayList<ArrayList<String>>();
+	ArrayList<ArrayList<String>> strings = new ArrayList<ArrayList<String>>();
+	int dialogueNr = 0;
 
 	public Dialogue (String filePath)	{
 
@@ -35,7 +37,7 @@ public class Dialogue extends GraphicsProgram {
 		try {
 			while ((line = br.readLine()) != null) {
 				if (line.equals("---")){
-					strenger.add (new ArrayList<String> (temp));
+					strings.add (new ArrayList<String> (temp));
 					temp.clear();
 				}else {
 					temp.add (line);
@@ -46,6 +48,9 @@ public class Dialogue extends GraphicsProgram {
 		}
 	}
 	public String toString (){
-		return strenger.toString();
+		if (!strings.get(dialogueNr).isEmpty()){
+			return (strings.get(dialogueNr).remove((int) Math.round(Math.random() * (strings.get(dialogueNr).size() - 1))));			
+		}
+		else return ("Shut up!!");
 	}
 }

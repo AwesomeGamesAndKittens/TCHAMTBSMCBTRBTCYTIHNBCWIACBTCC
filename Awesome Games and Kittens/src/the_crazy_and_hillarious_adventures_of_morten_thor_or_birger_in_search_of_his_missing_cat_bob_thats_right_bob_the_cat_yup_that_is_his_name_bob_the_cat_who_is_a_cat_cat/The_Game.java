@@ -49,7 +49,11 @@ public class The_Game extends GraphicsProgram{
 			break;
 		case KeyEvent.VK_SPACE:
 			IODialog hei = new IODialog ();
-			hei.println("hei");
+			hei.println(dialogues);
+			break;
+		case KeyEvent.VK_T:
+			dialogues.dialogueNr += 1;
+			break;
 		}
 		if (mouse != null){
 			character.mouseRotation(mouse);
