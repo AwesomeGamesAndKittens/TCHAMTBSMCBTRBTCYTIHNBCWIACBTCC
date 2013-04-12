@@ -53,6 +53,7 @@ public class The_Game extends GraphicsProgram{
 		}
 		if (mouse != null){
 			character.mouseRotation(mouse);
+			
 		}
 	}
 	
