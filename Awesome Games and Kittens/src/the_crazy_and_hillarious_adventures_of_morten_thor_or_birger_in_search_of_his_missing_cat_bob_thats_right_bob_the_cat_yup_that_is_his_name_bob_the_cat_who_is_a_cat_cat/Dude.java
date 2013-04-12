@@ -23,6 +23,7 @@ public class Dude extends GPolygon {
 	public void move(Direction dir) {
 		move(speed * dir.dx(), speed * dir.dy());
 	}
+	
 	public void mouseRotation (MouseEvent e){
 		double oldDir = direction;
 		direction = (Math.toDegrees (Math.atan2 (e.getX() - getX(), e.getY() - getY())));
