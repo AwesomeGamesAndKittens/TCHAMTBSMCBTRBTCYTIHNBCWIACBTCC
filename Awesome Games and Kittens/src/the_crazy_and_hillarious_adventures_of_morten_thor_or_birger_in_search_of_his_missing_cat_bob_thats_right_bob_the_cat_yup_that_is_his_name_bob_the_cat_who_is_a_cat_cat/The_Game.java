@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
+import acm.io.IODialog;
 import acm.program.GraphicsProgram;
 
 //	The crazy and hilarious adventures of Morten, Thor or Birger in search of his missing cat, Bob, that's right, Bob the cat. Yup, that is his name; Bob the cat, who is a cat. Cat.
@@ -32,7 +33,7 @@ public class The_Game extends GraphicsProgram{
 	}
 
 	@Override
-	public void keyPressed(KeyEvent e) {
+	public void keyPressed(KeyEvent e) { 
 		switch (e.getKeyCode()) {
 		case KeyEvent.VK_W:
 			character.move(Direction.NORTH);
@@ -46,6 +47,9 @@ public class The_Game extends GraphicsProgram{
 		case KeyEvent.VK_D:
 			character.move(Direction.EAST);
 			break;
+		case KeyEvent.VK_SPACE:
+			IODialog hei = new IODialog ();
+			hei.println("hei");
 		}
 		if (mouse != null){
 			character.mouseRotation(mouse);
