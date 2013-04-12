@@ -12,6 +12,7 @@ public class The_Game extends GraphicsProgram{
 
 	Dude character;
 	MouseEvent mouse;
+	Dialogue dialogues; 
 
 	@Override
 	public void init() {
@@ -23,6 +24,7 @@ public class The_Game extends GraphicsProgram{
 
 	@Override
 	public void run() {
+		dialogues = new Dialogue ("C:\\Users\\Morten\\workspace1\\Spillprosjekt\\TCHAMTBSMCBTRBTCYTIHNBCWIACBTCC\\Awesome Games and Kittens\\resources\\bob\\Dialog");
 		character = new Dude();
 		character.setLocation(400, 300);
 		character.setColor(Color.GRAY);
