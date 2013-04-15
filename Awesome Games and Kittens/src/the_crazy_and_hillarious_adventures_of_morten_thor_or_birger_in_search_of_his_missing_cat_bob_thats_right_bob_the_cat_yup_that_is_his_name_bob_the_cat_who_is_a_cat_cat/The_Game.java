@@ -27,7 +27,7 @@ public class The_Game extends GraphicsProgram{
 	@Override
 	public void run() {
 		dialogues = new Dialogue ("C:\\Users\\Morten\\workspace1\\Spillprosjekt\\TCHAMTBSMCBTRBTCYTIHNBCWIACBTCC\\Awesome Games and Kittens\\resources\\bob\\Dialog");
-		map = new Map ();
+		map = new Map ("Some image");
 		character = new Dude();
 		character.setLocation(400, 300);
 		character.setColor(Color.GRAY);
